@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8">
+            <title th:text="${product.name}"></title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+            <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet">
+        </head>
+        <body>
+            <h1 th:text="${product.name}"></h1>
+            <div class="container">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="parent">
+
+                        <a href="#" type="button" class="bs" th:href="@{/}">Go home</a>
+
+                        <a href="#" type="button" class="bs" th:href="@{/products}">Show all
+                            products</a>
+                    </div>
+
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <td scope="row">Id</td>
+                                <td>Name</td>
+                                <td>Protein (g)</td>
+                                <td>Carbohydrates (g)</td>
+                                <td>Fat (g)</td>
+                                <td>Kcal</td>
+                                <td>Type</td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td th:text="${product.id}"></td>
+                            <td>
+                                <a href="#" th:href="@{|/product/${#strings.replace(product.name, ' ', '-')}|}"
+                                   th:text="${product.name}">
+                                </a>
+                            </td>
+                            <td th:text="${product.protein}"></td>
+                            <td th:text="${product.carbohydrates}"></td>
+                            <td th:text="${product.fat}"></td>
+                            <td th:text="${product.kcal}"></td>
+                            <td th:text="${#strings.replace(product.productType,'_',' ')}"></td>
+                        </tr>
+                    </table>
+                    <img class="img-fluid" src="#" th:src="@{${product.imageUrl}}">
+                    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                    </div>
+        </body>
+    </html>

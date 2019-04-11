@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8">
+            <title class="text-center" th:text="${message.title}"></title>
+        </head>
+        <body class="text-center">
+            <h2>Something gone wrong...</h2>
+            <h2 th:text="${message.content}"></h2>
+        </body>
+    </html>

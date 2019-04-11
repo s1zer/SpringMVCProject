@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8">
+            <title th:text="#{hello.welcomeMessage}"></title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+            <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet">
+        </head>
+        <body>
+            <div class="jumbotron">
+                <h1>Home page</h1>
+                <div class="jumbotron text-center">
+                    <p>
+                        <a href="#" type="button" class="btn-primary" th:href="@{/products}">Show all products</a>
+                    </p>
+                </div>
+            </div>
+        </body>
+    </html>
